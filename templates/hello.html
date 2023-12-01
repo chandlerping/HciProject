@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #135f99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        User Study of Adaptive Homescreen
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        <label for="color1">Color 1:</label>
+        <input type="number" id="color1" name="color1" required><br><br>
+
+        <label for="pattern1">Pattern 1:</label>
+        <input type="number" id="pattern1" name="pattern1" required><br><br>
+
+        <label for="number1">Number 1:</label>
+        <input type="number" id="number1" name="number1" required><br><br>
+
+        <label for="color2">Color 2:</label>
+        <input type="number" id="color2" name="color2" required><br><br>
+
+        <label for="pattern2">Pattern 2:</label>
+        <input type="number" id="pattern2" name="pattern2" required><br><br>
+
+        <label for="number2">Number 2:</label>
+        <input type="number" id="number2" name="number2" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
