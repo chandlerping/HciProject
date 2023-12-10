@@ -45,21 +45,22 @@ def generate_image(request):
     image2 = Image.new('RGB', (480, 900), colors[c2][1])
     draw2 = ImageDraw.Draw(image2)
 
+    k = n2
     rows = (k - 1) // 4
 
     # Draw 'k' rectangles in rows of 4 below the existing rectangle
     for row in range(rows + 1):
-        fill_color = colors[c2][0]
+        fill_color_1 = colors[c2][0]
         for col in range(4):
             if row * 4 + col < k:
                 x0 = col * (rectangle_width + margin) + 50
                 y0 = row * (rectangle_height + margin) + 100
                 x1 = x0 + rectangle_width
                 y1 = y0 + rectangle_height
-                draw2.rounded_rectangle((x0, y0, x1, y1), radius=radius, fill=fill_color)
+                draw2.rounded_rectangle((x0, y0, x1, y1), radius=radius, fill=fill_color_1)
         if row == rows and p2 == 1:
             y = 100 + (row + 1) * (rectangle_height + margin)
-            draw2.rounded_rectangle((50, y, 430, y + 100), radius=radius, fill=fill_color)
+            draw2.rounded_rectangle((50, y, 430, y + 100), radius=radius, fill=fill_color_1)
 
     combined_width = image1.width + margin + image2.width
     combined_image = Image.new('RGB', (combined_width, 800), 'white')
